@@ -15,9 +15,12 @@ AP: '(';
 FP: ')';
 DELIM:':';
 VAR: LETRA(DIGITO|LETRA)*;
-NUM: DIGITO*(','DIGITO)?;
+NumI: DIGITO*;
+NumR: DIGITO*','DIGITO*;
 
-OpArit: '+'|'-'|'*'|'/';
+OpArit: '+'|'-'|'*'|'/'|'%';
+OpRel: '<'|'>'|'<='|'>=' | '==';
+OpBool: 'REAL' | 'FAKE';
 
 fragment LETRA: [a-zA-Z];
 fragment DIGITO: [0..9];
