@@ -3,7 +3,7 @@ grammar MinhaGramatica;
 ALG: 'ALGORITMO';
 TIP: 'MADRID' | 'DEMILAO';
 LER: 'LER';
-IMP: 'IMPIRMIR';
+IMP: 'IMPRIMIR';
 SE: 'SE';
 SEN: 'SENAO';
 ENT: 'ENTAO';
