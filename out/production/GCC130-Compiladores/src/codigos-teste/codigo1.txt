@@ -1,0 +1,7 @@
+:ALGORITMO
+DEMILAO numero
+LER numero
+SE  numero%2 ENTAO
+	IMPRIMIR "impar"
+SENAO
+	IMPRIMIR "par"
