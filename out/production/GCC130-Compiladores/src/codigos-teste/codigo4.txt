@@ -1,0 +1,13 @@
+:ALGORITMO
+REAL numero
+REAL media IGUAL 0
+DEMILAO contador
+LER@ numero
+ENQUANTO numero > 0
+	COMECA
+		LER numero
+media IGUAL media + numero
+contador IGUAL contador + 1
+TERMINA
+media IGUAL media / contador
+IMPRIMIR media
