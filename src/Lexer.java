@@ -13,7 +13,7 @@ public class Lexer {
     public static void  main (String[] args){
         ArrayList<String> errorList = new ArrayList<String>();
         int countError = 0;
-        String filename = "/home/otavio/Documentos/GitHub/GCC130-Compiladores/src/codigos-teste/codigo1.txt";
+        String filename = "/home/otavio/Documentos/GitHub/GCC130-Compiladores/src/codigos-teste/codigo4.txt";
         try{
             CharStream input = CharStreams.fromFileName(filename);
             HekissaLexer lexer = new HekissaLexer(input);
