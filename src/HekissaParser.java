@@ -101,6 +101,18 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ProgramaContext extends ParserRuleContext {
+		public ProgramaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_programa; }
+	 
+		public ProgramaContext() { }
+		public void copyFrom(ProgramaContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NProgramaContext extends ProgramaContext {
 		public TerminalNode DELIM() { return getToken(HekissaParser.DELIM, 0); }
 		public TerminalNode ALG() { return getToken(HekissaParser.ALG, 0); }
 		public DeclaracoesContext declaracoes() {
@@ -109,17 +121,14 @@ public class HekissaParser extends Parser {
 		public CorpoContext corpo() {
 			return getRuleContext(CorpoContext.class,0);
 		}
-		public ProgramaContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_programa; }
+		public NProgramaContext(ProgramaContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterPrograma(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNPrograma(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitPrograma(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNPrograma(this);
 		}
 	}
 
@@ -127,6 +136,7 @@ public class HekissaParser extends Parser {
 		ProgramaContext _localctx = new ProgramaContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_programa);
 		try {
+			_localctx = new NProgramaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(26);
@@ -152,23 +162,32 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class DeclaracoesContext extends ParserRuleContext {
+		public DeclaracoesContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_declaracoes; }
+	 
+		public DeclaracoesContext() { }
+		public void copyFrom(DeclaracoesContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NDeclaracoesContext extends DeclaracoesContext {
 		public List<DeclaracaoContext> declaracao() {
 			return getRuleContexts(DeclaracaoContext.class);
 		}
 		public DeclaracaoContext declaracao(int i) {
 			return getRuleContext(DeclaracaoContext.class,i);
 		}
-		public DeclaracoesContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_declaracoes; }
+		public NDeclaracoesContext(DeclaracoesContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterDeclaracoes(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNDeclaracoes(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitDeclaracoes(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNDeclaracoes(this);
 		}
 	}
 
@@ -177,6 +196,7 @@ public class HekissaParser extends Parser {
 		enterRule(_localctx, 2, RULE_declaracoes);
 		int _la;
 		try {
+			_localctx = new NDeclaracoesContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(34);
@@ -208,19 +228,28 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class DeclaracaoContext extends ParserRuleContext {
-		public TerminalNode TIP() { return getToken(HekissaParser.TIP, 0); }
-		public TerminalNode VAR() { return getToken(HekissaParser.VAR, 0); }
 		public DeclaracaoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_declaracao; }
+	 
+		public DeclaracaoContext() { }
+		public void copyFrom(DeclaracaoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NDeclaracaoContext extends DeclaracaoContext {
+		public TerminalNode TIP() { return getToken(HekissaParser.TIP, 0); }
+		public TerminalNode VAR() { return getToken(HekissaParser.VAR, 0); }
+		public NDeclaracaoContext(DeclaracaoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterDeclaracao(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNDeclaracao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitDeclaracao(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNDeclaracao(this);
 		}
 	}
 
@@ -228,6 +257,7 @@ public class HekissaParser extends Parser {
 		DeclaracaoContext _localctx = new DeclaracaoContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_declaracao);
 		try {
+			_localctx = new NDeclaracaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(37);
@@ -249,23 +279,32 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class CorpoContext extends ParserRuleContext {
+		public CorpoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_corpo; }
+	 
+		public CorpoContext() { }
+		public void copyFrom(CorpoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NCorpoContext extends CorpoContext {
 		public List<ComandoContext> comando() {
 			return getRuleContexts(ComandoContext.class);
 		}
 		public ComandoContext comando(int i) {
 			return getRuleContext(ComandoContext.class,i);
 		}
-		public CorpoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_corpo; }
+		public NCorpoContext(CorpoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterCorpo(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNCorpo(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitCorpo(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNCorpo(this);
 		}
 	}
 
@@ -274,6 +313,7 @@ public class HekissaParser extends Parser {
 		enterRule(_localctx, 6, RULE_corpo);
 		try {
 			int _alt;
+			_localctx = new NCorpoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(43);
@@ -307,6 +347,18 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ComandoContext extends ParserRuleContext {
+		public ComandoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_comando; }
+	 
+		public ComandoContext() { }
+		public void copyFrom(ComandoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NComandoContext extends ComandoContext {
 		public LeituraContext leitura() {
 			return getRuleContext(LeituraContext.class,0);
 		}
@@ -322,17 +374,14 @@ public class HekissaParser extends Parser {
 		public AtribuicaoContext atribuicao() {
 			return getRuleContext(AtribuicaoContext.class,0);
 		}
-		public ComandoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_comando; }
+		public NComandoContext(ComandoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterComando(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNComando(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitComando(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNComando(this);
 		}
 	}
 
@@ -340,6 +389,7 @@ public class HekissaParser extends Parser {
 		ComandoContext _localctx = new ComandoContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_comando);
 		try {
+			_localctx = new NComandoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(51);
@@ -393,19 +443,28 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class LeituraContext extends ParserRuleContext {
-		public TerminalNode LER() { return getToken(HekissaParser.LER, 0); }
-		public TerminalNode VAR() { return getToken(HekissaParser.VAR, 0); }
 		public LeituraContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_leitura; }
+	 
+		public LeituraContext() { }
+		public void copyFrom(LeituraContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NLeituraContext extends LeituraContext {
+		public TerminalNode LER() { return getToken(HekissaParser.LER, 0); }
+		public TerminalNode VAR() { return getToken(HekissaParser.VAR, 0); }
+		public NLeituraContext(LeituraContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterLeitura(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNLeitura(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitLeitura(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNLeitura(this);
 		}
 	}
 
@@ -413,6 +472,7 @@ public class HekissaParser extends Parser {
 		LeituraContext _localctx = new LeituraContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_leitura);
 		try {
+			_localctx = new NLeituraContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(53);
@@ -434,21 +494,30 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class EscritaContext extends ParserRuleContext {
-		public TerminalNode IMP() { return getToken(HekissaParser.IMP, 0); }
-		public OpcoesContext opcoes() {
-			return getRuleContext(OpcoesContext.class,0);
-		}
 		public EscritaContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_escrita; }
+	 
+		public EscritaContext() { }
+		public void copyFrom(EscritaContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NEscritaContext extends EscritaContext {
+		public TerminalNode IMP() { return getToken(HekissaParser.IMP, 0); }
+		public OpcoesContext opcoes() {
+			return getRuleContext(OpcoesContext.class,0);
+		}
+		public NEscritaContext(EscritaContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterEscrita(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNEscrita(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitEscrita(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNEscrita(this);
 		}
 	}
 
@@ -456,6 +525,7 @@ public class HekissaParser extends Parser {
 		EscritaContext _localctx = new EscritaContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_escrita);
 		try {
+			_localctx = new NEscritaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(56);
@@ -525,6 +595,18 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class CondicionalContext extends ParserRuleContext {
+		public CondicionalContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_condicional; }
+	 
+		public CondicionalContext() { }
+		public void copyFrom(CondicionalContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NCondicionalContext extends CondicionalContext {
 		public TerminalNode SE() { return getToken(HekissaParser.SE, 0); }
 		public List<ExpressaoContext> expressao() {
 			return getRuleContexts(ExpressaoContext.class);
@@ -541,17 +623,14 @@ public class HekissaParser extends Parser {
 			return getRuleContext(CorpoContext.class,i);
 		}
 		public TerminalNode SEN() { return getToken(HekissaParser.SEN, 0); }
-		public CondicionalContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_condicional; }
+		public NCondicionalContext(CondicionalContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterCondicional(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNCondicional(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitCondicional(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNCondicional(this);
 		}
 	}
 
@@ -559,6 +638,7 @@ public class HekissaParser extends Parser {
 		CondicionalContext _localctx = new CondicionalContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_condicional);
 		try {
+			_localctx = new NCondicionalContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(61);
@@ -592,6 +672,18 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IterativoContext extends ParserRuleContext {
+		public IterativoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_iterativo; }
+	 
+		public IterativoContext() { }
+		public void copyFrom(IterativoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NIterativoContext extends IterativoContext {
 		public TerminalNode ENQ() { return getToken(HekissaParser.ENQ, 0); }
 		public List<ExpressaoContext> expressao() {
 			return getRuleContexts(ExpressaoContext.class);
@@ -605,17 +697,14 @@ public class HekissaParser extends Parser {
 			return getRuleContext(CorpoContext.class,0);
 		}
 		public TerminalNode TER() { return getToken(HekissaParser.TER, 0); }
-		public IterativoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_iterativo; }
+		public NIterativoContext(IterativoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterIterativo(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNIterativo(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitIterativo(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNIterativo(this);
 		}
 	}
 
@@ -623,6 +712,7 @@ public class HekissaParser extends Parser {
 		IterativoContext _localctx = new IterativoContext(_ctx, getState());
 		enterRule(_localctx, 18, RULE_iterativo);
 		try {
+			_localctx = new NIterativoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(70);
@@ -654,22 +744,31 @@ public class HekissaParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class AtribuicaoContext extends ParserRuleContext {
+		public AtribuicaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_atribuicao; }
+	 
+		public AtribuicaoContext() { }
+		public void copyFrom(AtribuicaoContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NAtribuicaoContext extends AtribuicaoContext {
 		public TerminalNode VAR() { return getToken(HekissaParser.VAR, 0); }
 		public TerminalNode IGU() { return getToken(HekissaParser.IGU, 0); }
 		public ExpressaoContext expressao() {
 			return getRuleContext(ExpressaoContext.class,0);
 		}
-		public AtribuicaoContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_atribuicao; }
+		public NAtribuicaoContext(AtribuicaoContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterAtribuicao(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).enterNAtribuicao(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitAtribuicao(this);
+			if ( listener instanceof HekissaListener ) ((HekissaListener)listener).exitNAtribuicao(this);
 		}
 	}
 
@@ -677,6 +776,7 @@ public class HekissaParser extends Parser {
 		AtribuicaoContext _localctx = new AtribuicaoContext(_ctx, getState());
 		enterRule(_localctx, 20, RULE_atribuicao);
 		try {
+			_localctx = new NAtribuicaoContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(78);

@@ -7,75 +7,89 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface HekissaListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#programa}.
+	 * Enter a parse tree produced by the {@code NPrograma}
+	 * labeled alternative in {@link HekissaParser#programa}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrograma(HekissaParser.ProgramaContext ctx);
+	void enterNPrograma(HekissaParser.NProgramaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#programa}.
+	 * Exit a parse tree produced by the {@code NPrograma}
+	 * labeled alternative in {@link HekissaParser#programa}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrograma(HekissaParser.ProgramaContext ctx);
+	void exitNPrograma(HekissaParser.NProgramaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#declaracoes}.
+	 * Enter a parse tree produced by the {@code NDeclaracoes}
+	 * labeled alternative in {@link HekissaParser#declaracoes}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracoes(HekissaParser.DeclaracoesContext ctx);
+	void enterNDeclaracoes(HekissaParser.NDeclaracoesContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#declaracoes}.
+	 * Exit a parse tree produced by the {@code NDeclaracoes}
+	 * labeled alternative in {@link HekissaParser#declaracoes}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracoes(HekissaParser.DeclaracoesContext ctx);
+	void exitNDeclaracoes(HekissaParser.NDeclaracoesContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#declaracao}.
+	 * Enter a parse tree produced by the {@code NDeclaracao}
+	 * labeled alternative in {@link HekissaParser#declaracao}.
 	 * @param ctx the parse tree
 	 */
-	void enterDeclaracao(HekissaParser.DeclaracaoContext ctx);
+	void enterNDeclaracao(HekissaParser.NDeclaracaoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#declaracao}.
+	 * Exit a parse tree produced by the {@code NDeclaracao}
+	 * labeled alternative in {@link HekissaParser#declaracao}.
 	 * @param ctx the parse tree
 	 */
-	void exitDeclaracao(HekissaParser.DeclaracaoContext ctx);
+	void exitNDeclaracao(HekissaParser.NDeclaracaoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#corpo}.
+	 * Enter a parse tree produced by the {@code NCorpo}
+	 * labeled alternative in {@link HekissaParser#corpo}.
 	 * @param ctx the parse tree
 	 */
-	void enterCorpo(HekissaParser.CorpoContext ctx);
+	void enterNCorpo(HekissaParser.NCorpoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#corpo}.
+	 * Exit a parse tree produced by the {@code NCorpo}
+	 * labeled alternative in {@link HekissaParser#corpo}.
 	 * @param ctx the parse tree
 	 */
-	void exitCorpo(HekissaParser.CorpoContext ctx);
+	void exitNCorpo(HekissaParser.NCorpoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#comando}.
+	 * Enter a parse tree produced by the {@code NComando}
+	 * labeled alternative in {@link HekissaParser#comando}.
 	 * @param ctx the parse tree
 	 */
-	void enterComando(HekissaParser.ComandoContext ctx);
+	void enterNComando(HekissaParser.NComandoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#comando}.
+	 * Exit a parse tree produced by the {@code NComando}
+	 * labeled alternative in {@link HekissaParser#comando}.
 	 * @param ctx the parse tree
 	 */
-	void exitComando(HekissaParser.ComandoContext ctx);
+	void exitNComando(HekissaParser.NComandoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#leitura}.
+	 * Enter a parse tree produced by the {@code NLeitura}
+	 * labeled alternative in {@link HekissaParser#leitura}.
 	 * @param ctx the parse tree
 	 */
-	void enterLeitura(HekissaParser.LeituraContext ctx);
+	void enterNLeitura(HekissaParser.NLeituraContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#leitura}.
+	 * Exit a parse tree produced by the {@code NLeitura}
+	 * labeled alternative in {@link HekissaParser#leitura}.
 	 * @param ctx the parse tree
 	 */
-	void exitLeitura(HekissaParser.LeituraContext ctx);
+	void exitNLeitura(HekissaParser.NLeituraContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#escrita}.
+	 * Enter a parse tree produced by the {@code NEscrita}
+	 * labeled alternative in {@link HekissaParser#escrita}.
 	 * @param ctx the parse tree
 	 */
-	void enterEscrita(HekissaParser.EscritaContext ctx);
+	void enterNEscrita(HekissaParser.NEscritaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#escrita}.
+	 * Exit a parse tree produced by the {@code NEscrita}
+	 * labeled alternative in {@link HekissaParser#escrita}.
 	 * @param ctx the parse tree
 	 */
-	void exitEscrita(HekissaParser.EscritaContext ctx);
+	void exitNEscrita(HekissaParser.NEscritaContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link HekissaParser#opcoes}.
 	 * @param ctx the parse tree
@@ -87,35 +101,41 @@ public interface HekissaListener extends ParseTreeListener {
 	 */
 	void exitOpcoes(HekissaParser.OpcoesContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#condicional}.
+	 * Enter a parse tree produced by the {@code NCondicional}
+	 * labeled alternative in {@link HekissaParser#condicional}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondicional(HekissaParser.CondicionalContext ctx);
+	void enterNCondicional(HekissaParser.NCondicionalContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#condicional}.
+	 * Exit a parse tree produced by the {@code NCondicional}
+	 * labeled alternative in {@link HekissaParser#condicional}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondicional(HekissaParser.CondicionalContext ctx);
+	void exitNCondicional(HekissaParser.NCondicionalContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#iterativo}.
+	 * Enter a parse tree produced by the {@code NIterativo}
+	 * labeled alternative in {@link HekissaParser#iterativo}.
 	 * @param ctx the parse tree
 	 */
-	void enterIterativo(HekissaParser.IterativoContext ctx);
+	void enterNIterativo(HekissaParser.NIterativoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#iterativo}.
+	 * Exit a parse tree produced by the {@code NIterativo}
+	 * labeled alternative in {@link HekissaParser#iterativo}.
 	 * @param ctx the parse tree
 	 */
-	void exitIterativo(HekissaParser.IterativoContext ctx);
+	void exitNIterativo(HekissaParser.NIterativoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link HekissaParser#atribuicao}.
+	 * Enter a parse tree produced by the {@code NAtribuicao}
+	 * labeled alternative in {@link HekissaParser#atribuicao}.
 	 * @param ctx the parse tree
 	 */
-	void enterAtribuicao(HekissaParser.AtribuicaoContext ctx);
+	void enterNAtribuicao(HekissaParser.NAtribuicaoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link HekissaParser#atribuicao}.
+	 * Exit a parse tree produced by the {@code NAtribuicao}
+	 * labeled alternative in {@link HekissaParser#atribuicao}.
 	 * @param ctx the parse tree
 	 */
-	void exitAtribuicao(HekissaParser.AtribuicaoContext ctx);
+	void exitNAtribuicao(HekissaParser.NAtribuicaoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link HekissaParser#expressao}.
 	 * @param ctx the parse tree
