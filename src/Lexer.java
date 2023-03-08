@@ -1,8 +1,9 @@
-package src;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,38 +12,32 @@ import java.util.ArrayList;
 public class Lexer {
 
     public static void  main (String[] args){
-        ArrayList<String> errorList = new ArrayList<String>();
-        int countError = 0;
-        String filename = "/home/otavio/Documentos/GitHub/GCC130-Compiladores/src/codigos-teste/codigo4.txt";
+        /*ArrayList<String> errorList = new ArrayList<String>();
+        int countError = 0;*/
+        String filename = "/home/otavio/Documentos/GitHub/GCC130-Compiladores/src/codigos-teste/codigo1.txt";
         try{
             CharStream input = CharStreams.fromFileName(filename);
             HekissaLexer lexer = new HekissaLexer(input);
-            Token token;
-            while (!lexer._hitEOF){
-                token = lexer.nextToken();
-                System.out.println("Token: "+ token.toString());
-                System.out.println("    Lexema: "+ token.getText());
-                System.out.println("    Classe: "+lexer.getVocabulary().getDisplayName(token.getType()));
 
-                if(lexer.getVocabulary().getDisplayName(token.getType()) == "ErrorChar"){
-                    int a = lexer.getLine();
+            CommonTokenStream tokens = new CommonTokenStream(lexer);//Passa varios tokens e nao um por um
+            HekissaParser parser = new HekissaParser(tokens);//Parser passando por fluxo de tokens
 
-                    errorList.add(String.valueOf(a) + "  Lexema: "+ token.getText());
-                }
+            ParseTree ast = parser.programa();
 
-            }
+            System.out.println(ast.toStringTree());
 
         } catch (IOException e){
             e.printStackTrace();
+
         }
 
-        for(int i =0; i < errorList.size();i++){
+        /*for(int i =0; i < errorList.size();i++){
             System.out.println("\n\nERRO NA LINHA: " + errorList.get(i));
         }
 
         if(errorList.isEmpty()){
             System.out.println("\nGG!!");
             System.out.println("Codigo compilado com sucesso ");
-        }
+        }*/
     }
 }

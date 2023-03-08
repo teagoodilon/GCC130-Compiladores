@@ -1,17 +1,17 @@
 grammar Hekissa;
 
-programa: DELIM ALG declaracoes corpo;
-declaracoes: (declaracao)*;
-declaracao: TIP VAR;
+programa: DELIM ALG declaracoes corpo EOF;
+declaracoes: (declaracao)+ ;
+declaracao: TIP VAR ;
 corpo: (comando)*;
-comando: (leitura | escrita | condicional | iterativo | atribuicao);
-leitura: LER VAR;
-escrita: IMP opcoes;
+comando: (leitura | escrita | condicional | iterativo | atribuicao) ;
+leitura: LER VAR ;
+escrita: IMP opcoes ;
 opcoes: CAD | VAR;
-condicional: SE expressao OPREL expressao ENT corpo SEN corpo;
-iterativo: ENQ  expressao OPREL expressao COM corpo TER;
-atribuicao: VAR IGU expressao;
-expressao: fator OPARIT fator  | fator;
+condicional: SE expressao OPREL expressao ENT corpo SEN corpo ;
+iterativo: ENQ  expressao OPREL expressao COM corpo TER ;
+atribuicao: VAR IGU expressao ;
+expressao: fator OPARIT fator  | fator ;
 fator: VAR | NUMI | NUMR | OPBOOL;
 
 ALG: 'ALGORITMO';

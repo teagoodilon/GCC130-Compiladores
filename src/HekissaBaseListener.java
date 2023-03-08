@@ -16,85 +16,85 @@ public class HekissaBaseListener implements HekissaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNPrograma(HekissaParser.NProgramaContext ctx) { }
+	@Override public void enterPrograma(HekissaParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNPrograma(HekissaParser.NProgramaContext ctx) { }
+	@Override public void exitPrograma(HekissaParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNDeclaracoes(HekissaParser.NDeclaracoesContext ctx) { }
+	@Override public void enterDeclaracoes(HekissaParser.DeclaracoesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNDeclaracoes(HekissaParser.NDeclaracoesContext ctx) { }
+	@Override public void exitDeclaracoes(HekissaParser.DeclaracoesContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNDeclaracao(HekissaParser.NDeclaracaoContext ctx) { }
+	@Override public void enterDeclaracao(HekissaParser.DeclaracaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNDeclaracao(HekissaParser.NDeclaracaoContext ctx) { }
+	@Override public void exitDeclaracao(HekissaParser.DeclaracaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNCorpo(HekissaParser.NCorpoContext ctx) { }
+	@Override public void enterCorpo(HekissaParser.CorpoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNCorpo(HekissaParser.NCorpoContext ctx) { }
+	@Override public void exitCorpo(HekissaParser.CorpoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNComando(HekissaParser.NComandoContext ctx) { }
+	@Override public void enterComando(HekissaParser.ComandoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNComando(HekissaParser.NComandoContext ctx) { }
+	@Override public void exitComando(HekissaParser.ComandoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNLeitura(HekissaParser.NLeituraContext ctx) { }
+	@Override public void enterLeitura(HekissaParser.LeituraContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNLeitura(HekissaParser.NLeituraContext ctx) { }
+	@Override public void exitLeitura(HekissaParser.LeituraContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNEscrita(HekissaParser.NEscritaContext ctx) { }
+	@Override public void enterEscrita(HekissaParser.EscritaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNEscrita(HekissaParser.NEscritaContext ctx) { }
+	@Override public void exitEscrita(HekissaParser.EscritaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -112,37 +112,37 @@ public class HekissaBaseListener implements HekissaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNCondicional(HekissaParser.NCondicionalContext ctx) { }
+	@Override public void enterCondicional(HekissaParser.CondicionalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNCondicional(HekissaParser.NCondicionalContext ctx) { }
+	@Override public void exitCondicional(HekissaParser.CondicionalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNIterativo(HekissaParser.NIterativoContext ctx) { }
+	@Override public void enterIterativo(HekissaParser.IterativoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNIterativo(HekissaParser.NIterativoContext ctx) { }
+	@Override public void exitIterativo(HekissaParser.IterativoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNAtribuicao(HekissaParser.NAtribuicaoContext ctx) { }
+	@Override public void enterAtribuicao(HekissaParser.AtribuicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNAtribuicao(HekissaParser.NAtribuicaoContext ctx) { }
+	@Override public void exitAtribuicao(HekissaParser.AtribuicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
