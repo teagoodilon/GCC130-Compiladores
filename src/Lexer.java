@@ -28,7 +28,7 @@ public class Lexer {
 
         walker.walk(listener,ast);
 
-        System.out.println(listener.gettabelasSimbolos().toString());
+       // System.out.println(listener.gettabelasSimbolos().toString());
     }
 
     private static HekissaParser getParser(String filename){
