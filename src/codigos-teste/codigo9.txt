@@ -1,0 +1,6 @@
+:ALGORITMO
+DEMILAO x
+LER x
+LER y
+x IGUAL x + y
+IMPRIMIR x

@@ -1,0 +1,7 @@
+:ALGORITMO
+MADRID x
+MADRID y
+LER x
+LER y
+x IGUAL x + y
+IMPRIMIR x

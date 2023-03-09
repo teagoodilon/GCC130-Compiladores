@@ -6,16 +6,15 @@ public class MyListener extends HekissaBaseListener{
     public Map gettabelasSimbolos(){
         return tabelasSimbolos;
     }
-    @Override
-    public void enterNDeclaracao(HekissaParser.NDeclaracaoContext ctx){
-        System.out.println("In declaracao" + ctx.getText());
-    }
+
     @Override
     public void exitNDeclaracao(HekissaParser.NDeclaracaoContext ctx){
         String tipo = ctx.TIP().getText();
         String var = ctx.VAR().getText();
 
         if(tabelasSimbolos.containsKey(var)){
+
+
             System.out.println("Declaracao duplicada! Variavel " + var + " tipo " + tipo + " ja declarada");
         }else{
             tabelasSimbolos.put(var,tipo);
@@ -23,40 +22,67 @@ public class MyListener extends HekissaBaseListener{
 
     }
 
-    @Override
+
     //verificar se a variavel foi declarada //fazer em todos pontos que tem variavel
-    public void enterNLeitura(HekissaParser.NLeituraContext ctx) {
+    @Override
+    public void exitNLeitura(HekissaParser.NLeituraContext ctx) {
         String var = ctx.VAR().getText();
 
         if(!tabelasSimbolos.containsKey(var)){
+
             System.out.println("Variavel não declarada: " +  var);
         }
     }
 
     @Override
-    public void enterOpcoes(HekissaParser.OpcoesContext ctx) {
-        String var = ctx.VAR().getText();
+    public void exitOpcoes(HekissaParser.OpcoesContext ctx) {
+        if(ctx.VAR()!= null){
+            String var = ctx.VAR().getText();
+            if(!tabelasSimbolos.containsKey(var)){
 
-        if(!tabelasSimbolos.containsKey(var)){
-            System.out.println("Variavel não declarada: " +  var);
+                System.out.println("Variavel não declarada: " +  var);
+            }
         }
     }
 
     @Override
-    public void enterNAtribuicao(HekissaParser.NAtribuicaoContext ctx) {
+    public void exitNAtribuicao(HekissaParser.NAtribuicaoContext ctx) {
         String var = ctx.VAR().getText();
 
         if(!tabelasSimbolos.containsKey(var)){
+
             System.out.println("Variavel não declarada: " +  var);
+        }
+
+
+    }
+    @Override
+    public void exitFator(HekissaParser.FatorContext ctx) {
+        if(ctx.VAR()!= null){
+            String var = ctx.VAR().getText();
+            if(!tabelasSimbolos.containsKey(var)){
+
+                System.out.println("Variavel não declarada: " +  var);
+            }
         }
     }
 
     @Override
-    public void enterFator(HekissaParser.FatorContext ctx) {
-        String var = ctx.VAR().getText();
+    public void enterNExpressao(HekissaParser.NExpressaoContext ctx) {
+        String var1, var2;
+        String tipo1,tipo2;
 
-        if(!tabelasSimbolos.containsKey(var)){
-            System.out.println("Variavel não declarada: " +  var);
+        var1 =  ctx.fator(0).getText();
+        var2 = ctx.fator(1).getText();
+
+        tipo1 = tabelasSimbolos.get(var1);
+        tipo2 = tabelasSimbolos.get(var2);
+        if(var1 !=null && var2!=null){
+            if(!tipo1.equals(tipo2)){
+                System.out.println("Não é possível realizar operações entre " + tipo1 + " e " + tipo2);
+            }
         }
+
     }
+
 }

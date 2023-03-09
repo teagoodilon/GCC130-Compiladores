@@ -8,9 +8,9 @@ comando: (leitura | escrita | condicional | iterativo | atribuicao) #NComando;
 leitura: LER VAR #NLeitura;
 escrita: IMP opcoes #NEscrita;
 opcoes: CAD | VAR #NOpcoes;
-condicional: SE expressao OPREL expressao ENT corpo SEN corpo #NCondicional;
-iterativo: ENQ  expressao OPREL expressao COM corpo TER #NIterativo;
-atribuicao: VAR IGU expressao #NAtribuicao;
+condicional: SE expressao OPREL (fator|expressao) ENT corpo SEN corpo #NCondicional;
+iterativo: ENQ  (fator| expressao|VAR) OPREL (fator| expressao|VAR) COM corpo TER #NIterativo;
+atribuicao: VAR IGU (fator| expressao) #NAtribuicao;
 expressao: fator OPARIT fator #NExpressao;
 fator: VAR | NUMI | NUMR | OPBOOL #NFator;
 

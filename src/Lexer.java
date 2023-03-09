@@ -1,4 +1,9 @@
 
+
+
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -13,20 +18,19 @@ import java.util.ArrayList;
 public class Lexer {
 
     public static void  main (String[] args){
-        /*ArrayList<String> errorList = new ArrayList<String>();
-        int countError = 0;*/
-        HekissaParser parser = getParser("/home/otavio/Documentos/GitHub/GCC130-Compiladores/src/codigos-teste/codigo1.txt");
+
+        HekissaParser parser = getParser("/home/otavio/Documentos/GitHub/GCC130-Compiladores/src/codigos-teste/codigo10.txt");
 
         ParseTree ast = parser.programa();
 
-        System.out.println(ast.toStringTree());
+       // System.out.println(ast.toStringTree());
 
         //listener inicio
         MyListener listener = new MyListener();
 
         ParseTreeWalker walker = new ParseTreeWalker();
 
-        walker.walk(listener,ast);
+        walker.walk(listener,ast);//testa linha por linha
 
        // System.out.println(listener.gettabelasSimbolos().toString());
     }
@@ -42,6 +46,7 @@ public class Lexer {
 
         } catch (IOException e){
             e.printStackTrace();
+
 
         }
         return parser;

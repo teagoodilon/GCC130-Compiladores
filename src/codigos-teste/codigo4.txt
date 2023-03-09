@@ -1,8 +1,9 @@
 :ALGORITMO
-REAL numero
-REAL media IGUAL 0
-DEMILAO contador
-LER@ numero
+MADRID numero
+MADRID media
+MADRID contador
+media IGUAL 0
+LER numero
 ENQUANTO numero > 0
 	COMECA
 		LER numero

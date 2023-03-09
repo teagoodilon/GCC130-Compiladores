@@ -1,7 +1,8 @@
 :ALGORITMO
-DEMILAO numero
+MADRID numero
 LER numero
-SE  numero%2 ENTAO @
-	IMPRIMIR "impar"
+SE  numero%2 >= 1 ENTAO
+	IMPRIMIR "Impar"
 SENAO!
 	IMPRIMIR "par"
+

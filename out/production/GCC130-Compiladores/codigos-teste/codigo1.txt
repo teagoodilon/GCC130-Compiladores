@@ -1,8 +1,8 @@
 :ALGORITMO
 DEMILAO numero
-
 LER numero
-SE  numero%2 > 0 ENTAO
-	IMPRIMIR "impar"
+SE  numero%2 >= 1 ENTAO
+    IMPRIMIR "impar"
 SENAO
 	IMPRIMIR "par"
+
